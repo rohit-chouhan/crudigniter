@@ -1,0 +1,263 @@
+
+## Create
+It will create new record on table.
+
+>example.com/create/table
+
+Record will be pass as json body with  `POST` method
+```json
+{
+    "name":"Rohit"
+}
+```
+it will create new records in `users` table with name(column) Rohit(value).
+
+return when success
+```json
+{
+    "status":true,
+    "message":"Records added successfully"
+}
+```
+## Read
+It will return all records in json format and fast. method will use `GET`.
+### Read Paramters and Usage
+|parameter|description|example|
+|-|-|-|
+| blank | if you not passing any parameter it will retrive all data from table| --- |
+|column | It will work like where clause, it will retrive all data where column = value, its can take multiple value also.| `name=Rohit` or `name=Rohit&city=Ajmer`|
+|only| If you want to retrive data for perticular column so here user can use `only` parameter and can give column by comma, so it will return only perticular column records| only=name,city|
+|not| If you want to ignore some columns from record so user can pass column in not parameter | not=phone_number,password|
+|custom| Sometime maybe you will expect own records, so this is special parameter here you can direcly give SQL Query | custom=select * from users |
+|single| If you want to get only one single data so you can use single parameter| `single=true` or `id=1&single=true` |
+
+### Read Parameter examples
+
+Example Table and Records, table name is `users`
+
+|id|name|email|password|
+|-|-|-|-|
+|1|Rohit|rohit@gmail.com|Rohit321|
+|2|Rahul|rahul@gmail.com|123Rahul|
+|3|Komal|komal@gmail.com|Xyz123|
+|4|Neha|komal@gmail.com|iloveyou|
+|5|Pooja|pooja@gmail.com|iampooja|
+
+#### Blank
+>example.com/read/users
+
+```json
+[
+  {
+    "id": "1",
+    "name": "Rohit",
+    "email": "rohit@gmail.com",
+    "password": "Rohit321"
+  },
+  {
+    "id": "2",
+    "name": "Rahul",
+    "email": "rahul@gmail.com",
+    "password": "123Rahul"
+  },
+  {
+    "id": "3",
+    "name": "Komal",
+    "email": "komal@gmail.com",
+    "password": "Xyz123"
+  },
+  {
+    "id": "4",
+    "name": "Neha",
+    "email": "neha@gmail.com",
+    "password": "iloveyou"
+  },
+  {
+    "id": "5",
+    "name": "Pooja",
+    "email": "pooja@gmail.com",
+    "password": "iampooja"
+  }
+]
+```
+#### Column
+>example.com/read/users?name=Rohit
+
+or
+
+>example.com/read/users?name=Rohit&id=1
+
+```json
+[
+  {
+    "id": "1",
+    "name": "Rohit",
+    "email": "rohit@gmail.com",
+    "password": "Rohit321"
+  }
+]
+```
+
+#### Only
+>example.com/read/users?only=id,name
+
+```json
+[
+  {
+    "id": "1",
+    "name": "Rohit"
+  },
+  {
+    "id": "2",
+    "name": "Rahul"
+  },
+  {
+    "id": "3",
+    "name": "Komal"
+  },
+  {
+    "id": "4",
+    "name": "Neha"
+  },
+  {
+    "id": "5",
+    "name": "Pooja"
+  }
+]
+```
+
+#### Not
+>example.com/read/users?not=email,password
+
+```json
+[
+  {
+    "id": "1",
+    "name": "Rohit"
+  },
+  {
+    "id": "2",
+    "name": "Rahul"
+  },
+  {
+    "id": "3",
+    "name": "Komal"
+  },
+  {
+    "id": "4",
+    "name": "Neha"
+  },
+  {
+    "id": "5",
+    "name": "Pooja"
+  }
+]
+```
+
+#### Custom
+>example.com/read/users?custom=select * from users where id!=1
+
+```json
+[
+  {
+    "id": "2",
+    "name": "Rahul",
+    "email": "rahul@gmail.com",
+    "password": "123Rahul"
+  },
+  {
+    "id": "3",
+    "name": "Komal",
+    "email": "komal@gmail.com",
+    "password": "Xyz123"
+  },
+  {
+    "id": "4",
+    "name": "Neha",
+    "email": "neha@gmail.com",
+    "password": "iloveyou"
+  },
+  {
+    "id": "5",
+    "name": "Pooja",
+    "email": "pooja@gmail.com",
+    "password": "iampooja"
+  }
+]
+```
+
+#### Single
+>example.com/read/users?name=Rohit&single=true
+
+```json
+{
+  "id": "1",
+  "name": "Rohit",
+  "email": "rohit@gmail.com",
+  "password": "Rohit321"
+}
+```
+
+## Delete 
+If you want to delete any records or all records so we use `DELETE` method.
+### Delete All Data
+If you want remove all data (truncate table) so here we pass table with all=true parameter, which is confirm that user is really want to delete data.
+>example.com/delete/users?all=true
+
+```json
+{
+  "status":true,
+  "message":"All data has been deleted"
+}
+```
+It can delete the complete records from table.
+### Delete specific data
+If you want to delete perticular data from `users` table, like you want to delete data for user who have id=1. so we just normaly pass data with Json body.
+>example.com/delete/users
+
+body
+```json
+{
+  "id":1
+}
+```
+
+return
+```json
+{
+  "status":true,
+  "message":"Data has been deleted"
+}
+```
+
+It will delete the record who have id=1.
+
+## Update
+if you want to update, so here you have to use `PUT` method.
+For updating data you have to pass updating data with Json in Body. and where caluse will be pass as String query.
+
+### Update all record
+>example.com/update/users?all=true
+
+### Update Specific
+For updating specific record there where clause will pas as string query. like you want to update name of user who have id=1.
+
+>example.com/update/users?id=1
+
+Body
+```json
+{
+  "name":"Rohit Chouhan"
+}
+```
+
+Response
+```json
+{
+  "status":true,
+  "message":"Update successfully"
+}
+```
+
+It will update new name where id=1, which is passed on url. you can pass multiple string query also.
+
