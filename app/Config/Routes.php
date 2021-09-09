@@ -34,11 +34,11 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->post('/create/(:any)', 'Create::index/$1');
-$routes->delete('/delete/(:any)', 'Delete::index/$1');
-$routes->get('/read/(:any)', 'Read::index/$1');
-$routes->put('/update/(:any)', 'Update::index/$1');
-$routes->patch('/update/(:any)', 'Update::index/$1');
+$routes->post('/(:any)', 'Create::index/$1');
+$routes->delete('/(:any)', 'Delete::index/$1');
+$routes->get('/(:any)', 'Read::index/$1');
+$routes->put('/(:any)', 'Update::index/$1');
+$routes->patch('/(:any)', 'Update::index/$1');
 
 /*
  * --------------------------------------------------------------------
