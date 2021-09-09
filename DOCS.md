@@ -1,8 +1,9 @@
 
+Your API url always be `example.com/table`, as your requeste it automattlcy detect the requste is post, delete, put or read.
 ## Create
 It will create new record on table.
 
->example.com/create/table
+>example.com/table
 
 Record will be pass as json body with  `POST` method
 ```json
@@ -44,7 +45,7 @@ Example Table and Records, table name is `users`
 |5|Pooja|pooja@gmail.com|iampooja|
 
 #### Blank
->example.com/read/users
+>example.com/users
 
 ```json
 [
@@ -81,11 +82,11 @@ Example Table and Records, table name is `users`
 ]
 ```
 #### Column
->example.com/read/users?name=Rohit
+>example.com/users?name=Rohit
 
 or
 
->example.com/read/users?name=Rohit&id=1
+>example.com/users?name=Rohit&id=1
 
 ```json
 [
@@ -127,7 +128,7 @@ or
 ```
 
 #### Not
->example.com/read/users?not=email,password
+>example.com/users?not=email,password
 
 ```json
 [
@@ -155,7 +156,7 @@ or
 ```
 
 #### Custom
->example.com/read/users?custom=select * from users where id!=1
+>example.com/users?custom=select * from users where id!=1
 
 ```json
 [
@@ -187,7 +188,7 @@ or
 ```
 
 #### Single
->example.com/read/users?name=Rohit&single=true
+>example.com/users?name=Rohit&single=true
 
 ```json
 {
@@ -202,7 +203,7 @@ or
 If you want to delete any records or all records so we use `DELETE` method.
 ### Delete All Data
 If you want remove all data (truncate table) so here we pass table with all=true parameter, which is confirm that user is really want to delete data.
->example.com/delete/users?all=true
+>example.com/users?all=true
 
 ```json
 {
@@ -213,7 +214,7 @@ If you want remove all data (truncate table) so here we pass table with all=true
 It can delete the complete records from table.
 ### Delete specific data
 If you want to delete perticular data from `users` table, like you want to delete data for user who have id=1. so we just normaly pass data with Json body.
->example.com/delete/users
+>example.com/users
 
 body
 ```json
@@ -237,12 +238,12 @@ if you want to update, so here you have to use `PUT` method.
 For updating data you have to pass updating data with Json in Body. and where caluse will be pass as String query.
 
 ### Update all record
->example.com/update/users?all=true
+>example.com/users?all=true
 
 ### Update Specific
 For updating specific record there where clause will pas as string query. like you want to update name of user who have id=1.
 
->example.com/update/users?id=1
+>example.com/users?id=1
 
 Body
 ```json
