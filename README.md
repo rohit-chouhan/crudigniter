@@ -11,11 +11,18 @@ in `db_table`, you can give your database's table name where you want to perform
 
 |API|Method| Usage|
 |-|-|-|
-|example.com/create/db_table| POST | create new records|
-|example.com/read/db_table| GET | read records|
-|example.com/update/db_table| PUT, PATCH | update new record|
-|example.com/delete/db_table| DELETE | delete record|
+|example.com/db_table| POST | create new records|
+|example.com/db_table| GET | read records|
+|example.com/db_table| PUT, PATCH | update new record|
+|example.com/db_table| DELETE | delete record|
 
 <h4>Here the <a href="https://github.com/rohit-chouhan/crudigniter/blob/master/DOCS.md">Documentation</a><h4>
+ 
+### Changes Log
+```
+09/09/21
+- Routes fixed
+- API Calling path removed, and easy path added!
+```
 
 developed by <a href="https://linkedin.com/in/itsrohitchouhan">Rohit Chouhan ❤️</a>
