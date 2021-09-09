@@ -100,7 +100,7 @@ or
 ```
 
 #### Only
->example.com/read/users?only=id,name
+>example.com/users?only=id,name
 
 ```json
 [
