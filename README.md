@@ -3,25 +3,7 @@
  
 <p align="center"><img src="https://github.com/rohit-chouhan/crudigniter/blob/main/ci.jpg?raw=true"/></p>
 
-#### Why Crudigniter 🔥
-There is single API for everything to perform CRUD, use can easily create record on database with POST, to read with GET, to delete for DELETE and for update PUT. You do this from multiple platform and application because we know this is power of API.
-
-#### Installation and Use 🔥
-Just copy the whole program its CI4, and add create database and implication from `App/Config/Database.php` or `root/.env`. There are some classes in Controller don't delete it. Just create new class which you want and enjoy coding.
-
-in `db_table`, you can give your database's table name where you want to perform CRUD.
-
-|API|Method| Usage|
-|-|-|-|
-|example.com/db_table| POST | create new records|
-|example.com/db_table| GET | read records|
-|example.com/db_table| PUT, PATCH | update new record|
-|example.com/db_table| DELETE | delete record|
-
-#### Example Scene
-<p align="left"><img width="450" src="https://github.com/rohit-chouhan/crudigniter/blob/main/crud-working.png?raw=true"/></p>
-
-<h2>Read complete the <a href="https://github.com/rohit-chouhan/crudigniter/blob/master/DOCS.md">Documentation</a></h2>
+<h2>Read complete <a href="https://rohit-chouhan.github.io/crudigniter/">Documentation Here</a></h2>
  
 
 ### Change Logs
