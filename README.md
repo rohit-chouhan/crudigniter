@@ -32,6 +32,7 @@ in `db_table`, you can give your database's table name where you want to perform
 
 10/09/21
 - get columns name, datatype etc (GET)
+- custom parameter modified to query
 ```
 
 developed by <a href="https://linkedin.com/in/itsrohitchouhan">Rohit Chouhan ❤️</a>
