@@ -21,7 +21,7 @@ class Read extends BaseController
             $data = $this->conn->table($table)->get()->getResult();
           } else {
             //when custom 
-            if(array_key_exists("custom",$_GET)){
+            if(array_key_exists("query",$_GET)){
               $data =  $this->conn->query($request->getGet('custom'))->getResult();;
             } else if(array_key_exists("only",$_GET)) {
                 $data = $this->conn->table($table)->select($_GET['only'])->get()->getResult();
