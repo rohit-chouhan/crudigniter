@@ -22,28 +22,29 @@ class Read extends BaseController
           } else {
             //when custom 
             if(array_key_exists("custom",$_GET)){
-              $data =  $this->conn->query($request->getGet('custom'))->getResult();
+              $data =  $this->conn->query($request->getGet('custom'))->getResult();;
             } else if(array_key_exists("only",$_GET)) {
-                $data = $this->conn->table($table)->select($_GET['only']); 
-                $data = $data->get()->getResult();//getting only perticular columns
+                $data = $this->conn->table($table)->select($_GET['only'])->get()->getResult();
+            } else if(array_key_exists("columns",$_GET)) {
+                $data =  $this->conn->query("SELECT COLUMN_NAME as name, DATA_TYPE as datatype , COLUMN_TYPE as columntype , CHARACTER_MAXIMUM_LENGTH AS length FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = N'users' AND COLUMN_NAME NOT IN ('USER','CURRENT_CONNECTIONS','TOTAL_CONNECTIONS') AND TABLE_SCHEMA = 'dbapi'")->getResult();
             } else {
               //for all
-            $data = $this->conn->table($table);
-            foreach($_GET as $key=>$value)
-            {
-              //ignore not stringquery
-              if($key=='not' ){
-                continue;
-              }
+              $data = $this->conn->table($table);
+              foreach($_GET as $key=>$value)
+              {
+                //ignore not stringquery
+                if($key=='not' ){
+                  continue;
+                }
 
-              if($key=='single'){
-                continue;
-              }
+                if($key=='single'){
+                  continue;
+                }
 
-              $data = $data->where($key,$value); //getting by one like ?name=Rohit
-            }
-            
-          $data = $data->get()->getResult();
+                $data = $data->where($key,$value); //getting by one like ?name=Rohit
+              }
+              
+            $data = $data->get()->getResult();
             }
           }
           
