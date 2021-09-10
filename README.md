@@ -27,12 +27,12 @@ in `db_table`, you can give your database's table name where you want to perform
 ### Change Logs
 ```
 09/09/21
-- Routes fixed
-- API Calling path removed, and easy path added!
+- Routes fixed [FIXED]
+- API Calling path removed, and easy path added! [UPDATED]
 
 10/09/21
-- get columns name, datatype etc (GET)
-- custom parameter modified to query
+- get columns name, datatype etc for read [ADDED]
+- custom parameter modified to query [UPDATED]
 ```
 
 developed by <a href="https://linkedin.com/in/itsrohitchouhan">Rohit Chouhan ❤️</a>
