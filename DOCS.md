@@ -31,6 +31,7 @@ It will return all records in json format and fast. method will use `GET`.
 |not| If you want to ignore some columns from record so user can pass column in not parameter | not=phone_number,password|
 |custom| Sometime maybe you will expect own records, so this is special parameter here you can direcly give SQL Query | custom=select * from users |
 |single| If you want to get only one single data so you can use single parameter| `single=true` or `id=1&single=true` |
+|columns| If you want know column name, datatype of table | columns=true |
 
 ### Read Parameter examples
 
@@ -262,3 +263,37 @@ Response
 
 It will update new name where id=1, which is passed on url. you can pass multiple string query also.
 
+## Columns
+If you want to know what columns are in table and what data type here we use `columns` parameter.
+
+>example.com/users?columns=true
+
+Response
+```json
+[
+  {
+    "name": "id",
+    "datatype": "int",
+    "columntype": "int(11)",
+    "length": null
+  },
+  {
+    "name": "name",
+    "datatype": "varchar",
+    "columntype": "varchar(15)",
+    "length": "15"
+  },
+  {
+    "name": "email",
+    "datatype": "varchar",
+    "columntype": "varchar(35)",
+    "length": "35"
+  },
+  {
+    "name": "password",
+    "datatype": "varchar",
+    "columntype": "varchar(35)",
+    "length": "35"
+  }
+]
+```
