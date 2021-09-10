@@ -8,13 +8,14 @@
     + [Not](#not)
     + [Query](#query)
     + [Single](#single)
+    + [Columns](#columns)
 - [Delete](#delete)
   * [Delete All Data](#delete-all-data)
   * [Delete specific data](#delete-specific-data)
 - [Update](#update)
   * [Update all record](#update-all-record)
   * [Update Specific](#update-specific)
-- [Columns](#columns)
+- [Columns]
 
 
 Your API url always be `example.com/table`, as your requeste it automattlcy detect the requste is post, delete, put or read.
@@ -218,6 +219,41 @@ or
 }
 ```
 
+#### Columns
+If you want to know what columns are in table and what data type here we use `columns` parameter.
+
+>example.com/users?columns=true
+
+Response
+```json
+[
+  {
+    "name": "id",
+    "datatype": "int",
+    "columntype": "int(11)",
+    "length": null
+  },
+  {
+    "name": "name",
+    "datatype": "varchar",
+    "columntype": "varchar(15)",
+    "length": "15"
+  },
+  {
+    "name": "email",
+    "datatype": "varchar",
+    "columntype": "varchar(35)",
+    "length": "35"
+  },
+  {
+    "name": "password",
+    "datatype": "varchar",
+    "columntype": "varchar(35)",
+    "length": "35"
+  }
+]
+```
+
 ## Delete 
 If you want to delete any records or all records so we use `DELETE` method.
 ### Delete All Data
@@ -281,37 +317,4 @@ Response
 
 It will update new name where id=1, which is passed on url. you can pass multiple string query also.
 
-## Columns
-If you want to know what columns are in table and what data type here we use `columns` parameter.
 
->example.com/users?columns=true
-
-Response
-```json
-[
-  {
-    "name": "id",
-    "datatype": "int",
-    "columntype": "int(11)",
-    "length": null
-  },
-  {
-    "name": "name",
-    "datatype": "varchar",
-    "columntype": "varchar(15)",
-    "length": "15"
-  },
-  {
-    "name": "email",
-    "datatype": "varchar",
-    "columntype": "varchar(35)",
-    "length": "35"
-  },
-  {
-    "name": "password",
-    "datatype": "varchar",
-    "columntype": "varchar(35)",
-    "length": "35"
-  }
-]
-```
