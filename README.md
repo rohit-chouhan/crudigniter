@@ -24,7 +24,7 @@ in `db_table`, you can give your database's table name where you want to perform
 <h2>Read complete the <a href="https://github.com/rohit-chouhan/crudigniter/blob/master/DOCS.md">Documentation</a></h2>
  
 
-### Changes Log
+### Change Logs
 ```
 09/09/21
 - Routes fixed
