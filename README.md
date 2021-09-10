@@ -18,8 +18,12 @@ in `db_table`, you can give your database's table name where you want to perform
 |example.com/db_table| PUT, PATCH | update new record|
 |example.com/db_table| DELETE | delete record|
 
-<h4>Here the <a href="https://github.com/rohit-chouhan/crudigniter/blob/master/DOCS.md">Documentation</a><h4>
+#### Example Scene
+<p align="left"><img width="450" src="https://github.com/rohit-chouhan/crudigniter/blob/main/crud-working.png?raw=true"/></p>
+
+<h2>Read complete the <a href="https://github.com/rohit-chouhan/crudigniter/blob/master/DOCS.md">Documentation</a></h2>
  
+
 ### Changes Log
 ```
 09/09/21
