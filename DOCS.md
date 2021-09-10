@@ -1,3 +1,21 @@
+- [Create](#create)
+- [Read](#read)
+  * [Read Paramters and Usage](#read-paramters-and-usage)
+  * [Read Parameter examples](#read-parameter-examples)
+    + [Blank (All Records)](#blank)
+    + [Column](#column)
+    + [Only](#only)
+    + [Not](#not)
+    + [Query](#query)
+    + [Single](#single)
+- [Delete](#delete)
+  * [Delete All Data](#delete-all-data)
+  * [Delete specific data](#delete-specific-data)
+- [Update](#update)
+  * [Update all record](#update-all-record)
+  * [Update Specific](#update-specific)
+- [Columns](#columns)
+
 
 Your API url always be `example.com/table`, as your requeste it automattlcy detect the requste is post, delete, put or read.
 ## Create
@@ -29,7 +47,7 @@ It will return all records in json format and fast. method will use `GET`.
 |column | It will work like where clause, it will retrive all data where column = value, its can take multiple value also.| `name=Rohit` or `name=Rohit&city=Ajmer`|
 |only| If you want to retrive data for perticular column so here user can use `only` parameter and can give column by comma, so it will return only perticular column records| only=name,city|
 |not| If you want to ignore some columns from record so user can pass column in not parameter | not=phone_number,password|
-|custom| Sometime maybe you will expect own records, so this is special parameter here you can direcly give SQL Query | custom=select * from users |
+|query| Sometime maybe you will expect own records, so this is special parameter here you can direcly give SQL Query | query=select * from users |
 |single| If you want to get only one single data so you can use single parameter| `single=true` or `id=1&single=true` |
 |columns| If you want know column name, datatype of table | columns=true |
 
@@ -156,7 +174,7 @@ or
 ]
 ```
 
-#### Custom
+#### query
 >example.com/users?custom=select * from users where id!=1
 
 ```json
