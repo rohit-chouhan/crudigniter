@@ -29,6 +29,9 @@ in `db_table`, you can give your database's table name where you want to perform
 09/09/21
 - Routes fixed
 - API Calling path removed, and easy path added!
+
+10/09/21
+- get columns name, datatype etc (GET)
 ```
 
 developed by <a href="https://linkedin.com/in/itsrohitchouhan">Rohit Chouhan ❤️</a>
