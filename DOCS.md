@@ -176,7 +176,7 @@ or
 ```
 
 #### query
->example.com/users?custom=select * from users where id!=1
+>example.com/users?query=select * from users where id!=1
 
 ```json
 [
