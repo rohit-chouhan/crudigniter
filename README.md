@@ -15,6 +15,9 @@
 10/09/21
 - get columns name, datatype etc for read [ADDED]
 - custom parameter modified to query [UPDATED]
+
+11/09/21
+- file requeste (file upload) via POST [ADDED]
 ```
 
 developed by <a href="https://linkedin.com/in/itsrohitchouhan">Rohit Chouhan ❤️</a>
