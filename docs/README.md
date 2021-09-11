@@ -376,7 +376,7 @@ Response
 
 It will update new name where id=1, which is passed on url. you can pass multiple string query also.
 
-# Change Logs
+#### Change Logs
 ```
 09/09/21
 - Routes fixed [FIXED]
@@ -385,6 +385,9 @@ It will update new name where id=1, which is passed on url. you can pass multipl
 10/09/21
 - get columns name, datatype etc for read [ADDED]
 - custom parameter modified to query [UPDATED]
+
+11/09/21
+- file requeste (file upload) via POST [ADDED]
 ```
 
 developed by <a href="https://linkedin.com/in/itsrohitchouhan">Rohit Chouhan ❤️</a>
