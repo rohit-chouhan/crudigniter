@@ -21,24 +21,29 @@ in `db_table`, you can give your database's table name where you want to perform
 # Example Scene
 <p align="left"><img width="450" src="https://github.com/rohit-chouhan/crudigniter/blob/main/crud-working.png?raw=true"/></p>
 
-- [Create](#create)
-- [Read](#read)
-  * [Read Paramters and Usage](#read-paramters-and-usage)
-  * [Read Parameter examples](#read-parameter-examples)
-    + [Blank (All Records)](#blank)
-    + [Column](#column)
-    + [Only](#only)
-    + [Not](#not)
-    + [Query](#query)
-    + [Single](#single)
-- [Delete](#delete)
-  * [Delete All Data](#delete-all-data)
-  * [Delete specific data](#delete-specific-data)
-- [Update](#update)
-  * [Update all record](#update-all-record)
-  * [Update Specific](#update-specific)
-- [Columns](#columns)
-
+# Table of content
+  * [Create](#create)
+    + [Json body](#json-body)
+    + [Form data](#form-data)
+      - [Data Only](#data-only)
+      - [Data and Images](#data-and-images)
+  * [Read](#read)
+    + [Read Paramters and Usage](#read-paramters-and-usage)
+    + [Read Parameter examples](#read-parameter-examples)
+      - [Blank](#blank)
+      - [Column](#column)
+      - [Only](#only)
+      - [Not](#not)
+      - [query](#query)
+      - [Single](#single)
+      - [Columns](#columns)
+  * [Delete](#delete)
+    + [Delete All Data](#delete-all-data)
+    + [Delete specific data](#delete-specific-data)
+  * [Update](#update)
+    + [Update all record](#update-all-record)
+    + [Update Specific](#update-specific)
+- [Change Logs](#change-logs)
 
 # Methods
 Your API url always be `example.com/table`, as your requeste it automattlcy detect the requste is post, delete, put or read.
@@ -46,6 +51,7 @@ Your API url always be `example.com/table`, as your requeste it automattlcy dete
 ## Create
 It will create new record on table.
 
+### Json body
 >example.com/table
 
 Record will be pass as json body with  `POST` method
@@ -63,6 +69,36 @@ return when success
     "message":"Records added successfully"
 }
 ```
+
+### Form data
+If you want to send data from `form` & want to upload files, you have to use form requeste. Image upload will only work in form data. Here you have to use parameter `form=true`, and for image `image=file_field_name`
+
+#### Data Only
+>example.com/table?form=true
+
+it will create new records in `users` table with all field which is recived from source.
+
+return when success
+```json
+{
+    "status":true,
+    "message":"Records added successfully"
+}
+```
+
+#### Data and Images
+>example.com/table?form=true&image=profile_pic
+
+Note: profile_pic is name of field and database column also. it will recived image from profile_pic(input form) and will store name of file to profile_pic(table's column).
+
+return when success
+```json
+{
+    "status":true,
+    "message":"Records added successfully"
+}
+```
+
 ## Read
 It will return all records in json format and fast. method will use `GET`.
 ### Read Paramters and Usage
