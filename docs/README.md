@@ -89,7 +89,7 @@ return when success
 #### Data and Images
 >example.com/table?form=true&image=profile_pic
 
-Note: profile_pic is name of field and database column also. it will recived image from profile_pic(input form) and will store name of file to profile_pic(table's column). you can upload multiple image by passing by comma like this `image=profile_pic,cover,mycard`
+Note: profile_pic is name of field and database column also. it will received image from profile_pic(input form) and will store name of file to profile_pic(table's column). you can upload multiple image by passing by comma like this `image=profile_pic,cover,mycard`
 
 return when success
 ```json
