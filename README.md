@@ -23,6 +23,7 @@
 - bug fixed in reading query [FIXED]
 - table not found [FIXED]
 - file upload path changed [UPDATED]
+- all joins feature for READ [ADDED]
 ```
 
 developed by <a href="https://linkedin.com/in/itsrohitchouhan">Rohit Chouhan ❤️</a>
