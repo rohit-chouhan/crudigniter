@@ -22,6 +22,7 @@
 12/09/21
 - bug fixed in reading query [FIXED]
 - table not found [FIXED]
+- file upload path changed [UPDATED]
 ```
 
 developed by <a href="https://linkedin.com/in/itsrohitchouhan">Rohit Chouhan ❤️</a>
