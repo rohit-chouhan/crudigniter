@@ -120,12 +120,13 @@ Here the parameter for joins [NEW]
 
 |parameter|description|example|
 |-|-|-|
-|leftjoin| to apply left joins | leftjoin=foreign_table&on=self_column,foreign_column|
-|rightjoin| to apply right joins | rightjoin=foreign_table&on=self_column,foreign_column|
-|innerjoin| to apply inner joins | innerjoin=foreign_table&on=self_column,foreign_column|
-|leftouterjoin| to apply left outer joins | leftouterjoin=foreign_table&on=self_column,foreign_column|
-|rightouterjoin| to apply right outer joins | rightouterjoin=foreign_table&on=self_column,foreign_column|
-|fullouterjoin| to apply full outer joins | fullouterjoin=foreign_table&on=self_column,foreign_column|
+|leftjoin| to apply left joins | leftjoin=foreign_table|
+|rightjoin| to apply right joins | rightjoin=foreign_table|
+|innerjoin| to apply inner joins | innerjoin=foreign_table|
+|leftouterjoin| to apply left outer joins | leftouterjoin=foreign_table|
+|rightouterjoin| to apply right outer joins | rightouterjoin=foreign_table|
+|fullouterjoin| to apply full outer joins | fullouterjoin=foreign_table|
+|on| `on` is must with joins parameter, its use connect columns for both table |on=self_column,foreign_column|
 
 Join Example:
 >example.com/users?innerjoin=address&on=id,user_id
