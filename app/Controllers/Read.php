@@ -22,7 +22,16 @@ class Read extends BaseController
           } else {
             //when custom 
             if(array_key_exists("query",$_GET)){
-              $data =  $this->conn->query($request->getGet('custom'))->getResult();;
+
+              $fword = explode(' ',trim($request->getGet('query')));
+              if($fword[0]=='select' || $fword[0]=='SELECT') {
+                $data =  $this->conn->query($request->getGet('query'))->getResult();
+              } else {
+                $data = array(
+                  "status"=>false,
+                  "message"=>"only select query will apply."
+                );
+              }
             } else if(array_key_exists("only",$_GET)) {
                 $data = $this->conn->table($table)->select($_GET['only'])->get()->getResult();
             } else if(array_key_exists("columns",$_GET)) {
