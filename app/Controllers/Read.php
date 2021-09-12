@@ -13,8 +13,9 @@ class Read extends BaseController
 
 	public function index($table)
 	{
-        $tables=$this->conn->query("SHOW TABLES FROM `".$this->conn->database."`  WHERE `Tables_in_".$this->conn->database."` LIKE '%users%'")->getResult();
-        if($tables[0]->Tables_in_dbapi == $table) {
+        $tables=$this->conn->query("SHOW TABLES FROM `".$this->conn->database."`  WHERE `Tables_in_".$this->conn->database."` LIKE '%".$table."%'")->getResult();
+        $the_table = 'Tables_in_'.$this->conn->database.'';
+        if($tables[0]->$the_table == $table) {
           $request = \Config\Services::request();
           // if no any stringquiry found
           if(count($_GET)==0){
