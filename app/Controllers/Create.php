@@ -28,7 +28,7 @@ class Create extends BaseController
                 $images = explode(",",$_GET['image']);
                 for($i=0;$i<count($images);$i++){
                   $file = $request->getFile($images[$i]);
-                  $file->store();
+                  $file->move('./uploads',$file->getRandomName());
                   $_POST[$images[$i]]=$file->getName();
                 }
               }
