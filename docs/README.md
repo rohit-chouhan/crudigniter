@@ -390,6 +390,9 @@ It will update new name where id=1, which is passed on url. you can pass multipl
 
 11/09/21
 - file requeste (file upload) via POST [ADDED]
+
+12/09/21
+- bug fixed in reading query [FIXED]
 ```
 
 developed by <a href="https://linkedin.com/in/itsrohitchouhan">Rohit Chouhan ❤️</a>
