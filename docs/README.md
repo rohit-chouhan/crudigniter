@@ -93,6 +93,8 @@ Make sure you are using `Accept-Encoding` header, when uploads file.
 
 Note: profile_pic is name of field and database column also. it will received image from profile_pic(input form) and will store name of file to profile_pic(table's column). you can upload multiple image by passing by comma like this `image=profile_pic,cover,mycard`
 
+File will be uploaded at `root/uploads` folder with random name.
+
 return when success
 ```json
 {
