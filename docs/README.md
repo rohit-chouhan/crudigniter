@@ -116,6 +116,21 @@ It will return all records in json format and fast. method will use `GET`.
 |single| If you want to get only one single data so you can use single parameter| `single=true` or `id=1&single=true` |
 |columns| If you want know column name, datatype of table | columns=true |
 
+Here the parameter for joins [NEW]
+
+|parameter|description|example|
+|-|-|-|
+|leftjoin| to apply left joins | leftjoin=foreign_table&on=self_column,foreign_column|
+|rightjoin| to apply right joins | rightjoin=foreign_table&on=self_column,foreign_column|
+|innerjoin| to apply inner joins | innerjoin=foreign_table&on=self_column,foreign_column|
+|leftouterjoin| to apply left outer joins | leftouterjoin=foreign_table&on=self_column,foreign_column|
+|rightouterjoin| to apply right outer joins | rightouterjoin=foreign_table&on=self_column,foreign_column|
+|fullouterjoin| to apply full outer joins | fullouterjoin=foreign_table&on=self_column,foreign_column|
+
+Join Example:
+>example.com/users?innerjoin=address&on=id,user_id
+<p align="left"><img width="750" src="https://github.com/rohit-chouhan/crudigniter/blob/main/joins-working.jpg?raw=true"/></p>
+
 ### Read Parameter examples
 
 Example Table and Records, table name is `users`
@@ -397,6 +412,7 @@ It will update new name where id=1, which is passed on url. you can pass multipl
 - bug fixed in reading query [FIXED]
 - table not found [FIXED]
 - file upload path changed [UPDATED]
+- all joins feature for READ [ADDED]
 ```
 
 developed by <a href="https://linkedin.com/in/itsrohitchouhan">Rohit Chouhan ❤️</a>
