@@ -1,10 +1,13 @@
 
 <p align="center">Crudigniter is fast and easy API Database integrator  for Codeigniter 4, its can easy to perform CRUD technique for CI Application. You don't have to create diffrent method for CRUD techniue. everything is possible here in a single API.</p>
- 
-<p align="center"><img src="https://github.com/rohit-chouhan/crudigniter/blob/main/ci.jpg?raw=true"/></p>
 
 # Why Crudigniter 🔥
 There is single API for everything to perform CRUD, use can easily create record on database with POST, to read with GET, to delete for DELETE and for update PUT. You do this from multiple platform and application because we know this is power of API.
+
+# Security <img width="40" src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Blinking_warning.gif"/>
+Security added for all methods, in before its just accessing and performing CRUD technique without any key and authorization. But now we added authorization (bearer token) for CRUD. Its a optional feature. If you want to enable security it wil always need authorization else nothing. Follow the below introduction to use.
+
+<img width="20" src="https://upload.wikimedia.org/wikipedia/commons/9/92/Orange_animated_right_arrow.gif"/>[Here the Security Documentation](https://rohit-chouhan.github.io/crudigniter/#/security/)
 
 # Installation and Use 🔥
 Just copy the whole program its CI4, and add create database and implication from `App/Config/Database.php` or `root/.env`. There are some classes in Controller don't delete it. Just create new class which you want and enjoy coding.
