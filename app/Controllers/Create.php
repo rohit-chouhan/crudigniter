@@ -5,19 +5,23 @@ namespace App\Controllers;
 class Create extends BaseController
 {
   public $conn;
+  public $auth;
+  public $request;
   public function __construct()
   {
     helper(['url']);
     helper(['text']);
     $this->conn = \Config\Database::connect();
+    $this->auth = new \App\Models\Auth();
+    $this->request = \Config\Services::request();
   }
 
   public function index($table)
   {
+    if($this->auth->AuthCheck()){
     $tables = $this->conn->query("SHOW TABLES FROM `" . $this->conn->database . "`  WHERE `Tables_in_" . $this->conn->database . "` LIKE '%" . $table . "%'")->getResult();
     $the_table = 'Tables_in_' . $this->conn->database . '';
     if ($tables[0]->$the_table == $table) {
-      $request = \Config\Services::requesPt();
       $rawData = file_get_contents("php://input");
       $records = json_decode($rawData, true);
 
@@ -28,7 +32,7 @@ class Create extends BaseController
         if (array_key_exists("image", $_GET)) {
           $images = explode(",", $_GET['image']);
           for ($i = 0; $i < count($images); $i++) {
-            $file = $request->getFile($images[$i]);
+            $file = $this->request->getFile($images[$i]);
             $file->move('./uploads', $file->getRandomName());
             $_POST[$images[$i]] = $file->getName();
           }
@@ -39,7 +43,12 @@ class Create extends BaseController
     } else {
       echo json_encode(array("status" => false, "message" => "Table not found"));
     }
+  } else {
+    echo json_encode(array("status" => false, "message" => "Failed to auth, token is invalid"));
   }
+
+  }
+  
   public function createData($arr, $table)
   {
     $q = $this->conn->table($table);

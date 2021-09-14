@@ -5,19 +5,24 @@ namespace App\Controllers;
 class Read extends BaseController
 {
   public $conn;
+  public $auth;
+  public $request;
   public function __construct()
   {
     helper(['url']);
     helper(['text']);
     $this->conn = \Config\Database::connect();
+    $this->auth = new \App\Models\Auth();
+    $this->request = \Config\Services::request();
   }
 
   public function index($table)
   {
+    if($this->auth->AuthCheck()){
     $tables = $this->conn->query("SHOW TABLES FROM `" . $this->conn->database . "`  WHERE `Tables_in_" . $this->conn->database . "` LIKE '%" . $table . "%'")->getResult();
     $the_table = 'Tables_in_' . $this->conn->database . '';
     if ($tables[0]->$the_table == $table) {
-      $request = \Config\Services::request();
+     
       // if no any stringquiry found
       if (count($_GET) == 0) {
         $data = $this->conn->table($table)->get()->getResult();
@@ -25,9 +30,9 @@ class Read extends BaseController
         //when custom 
         if (array_key_exists("query", $_GET)) {
 
-          $fword = explode(' ', trim($request->getGet('query')));
+          $fword = explode(' ', trim($this->request->getGet('query')));
           if ($fword[0] == 'select' || $fword[0] == 'SELECT') {
-            $data =  $this->conn->query($request->getGet('query'))->getResult();
+            $data =  $this->conn->query($this->request->getGet('query'))->getResult();
           } else {
             $data = array(
               "status" => false,
@@ -99,6 +104,9 @@ class Read extends BaseController
       }
     } else {
       echo json_encode(array("status" => false, "message" => "Table not found"));
+    }
+    } else {
+      echo json_encode(array("status" => false, "message" => "Failed to auth, token is invalid"));
     }
   }
 }
