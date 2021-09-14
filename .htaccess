@@ -4,7 +4,12 @@ Options All -Indexes
 # ----------------------------------------------------------------------
 # Rewrite engine
 # ----------------------------------------------------------------------
-
+# Disable index view
+# Hide a specific file
+<Files .env>
+    Order allow,deny
+    Deny from all
+</Files>
 # Turning on the rewrite engine is necessary for the following rules and features.
 # FollowSymLinks must be enabled for this to work.
 <IfModule mod_rewrite.c>
