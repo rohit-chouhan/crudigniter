@@ -24,6 +24,9 @@
 - table not found [FIXED]
 - file upload path changed [UPDATED]
 - all joins feature for READ [ADDED]
+
+14/09/21
+- autorization security [ADDED]
 ```
 
 developed by <a href="https://linkedin.com/in/itsrohitchouhan">Rohit Chouhan ❤️</a>
