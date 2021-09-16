@@ -1,5 +1,5 @@
 
-<p align="center">Crudigniter is fast and easy API Database integrator  for Codeigniter 4, its can easy to perform CRUD technique for CI Application. You don't have to create diffrent method for CRUD techniue. everything is possible here in a single API.</p>
+Crudigniter is fast and easy API Database integrator  for Codeigniter 4, its can easy to perform CRUD technique for CI Application. You don't have to create diffrent method for CRUD techniue. everything is possible here in a single API
 
 
 <h2>Read complete <a href="https://rohit-chouhan.github.io/crudigniter/">Documentation Here</a></h2>
