@@ -1,10 +1,11 @@
 ## Auto HTML Table
+
 <details>
   <summary>Sample Code</summary>
   
 Here the code you can generate html table with `GET`, its will show the all records automatically as your requirent. Here we are using `DataTables.net`.
 Change `http://example.com/users` which your API. and also pass the columns name below of it.
- 
+
 
 ```html
 <!DOCTYPE html>
@@ -60,21 +61,22 @@ $(document).ready(function() {
 <script src="https://cdn.datatables.net/1.11.1/js/dataTables.bootstrap5.min.js"></script>
 </html>
 ```
+
 </details>
 
 ## CRUD with Python
+
 <details>
   <summary>Post Data</summary>
 
-  If `securiy_config=1`, use bearer token always
+If `securiy_config=1`, use bearer token always
 
-  ```python
-  api.post(url,json={}, headers = {"Authorization": "Bearer YOUR_KEY"})
- ```
-  
-For Json Body  
- 
-  
+```python
+api.post(url,json={}, headers = {"Authorization": "Bearer YOUR_KEY"})
+```
+
+For Json Body
+
 ```python
 import requests as api
 
@@ -83,11 +85,10 @@ response = api.post(url=api_url, json={
     'name':'Tony Stark',
     'email':'tony@ironman.com'
 })
-  ```
-  
-  For Form 
-  
-  
+```
+
+For Form
+
 ```python
 import requests as api
 
@@ -96,7 +97,8 @@ response = api.post(url=api_url, data={
     'name':'Tony Stark',
     'email':'tony@ironman.com'
 })
-  ```
+```
+
 </details>
 
 <details>
@@ -117,21 +119,23 @@ api_url = 'http://example.com/users'
 response = api.get(url=api_url, params={'name':'Rohit'})
 
 print(response.json())
-  ```
+
+````
 </details>
 
 <details>
-  <summary>Update Data</summary>
+<summary>Update Data</summary>
 
-  
+
 ```python
 import requests as api
 
 api_url = 'http://example.com/users?name=Tony Stark'
 response = api.put(url=api_url, json={
-    'name':'Mr. Tony Stark'
+  'name':'Mr. Tony Stark'
 })
-  ```
+````
+
 </details>
 
 <details>
@@ -143,7 +147,8 @@ import requests as api
 
 api_url = 'http://example.com/users'
 response = api.delete(url=api_url, json={
-    'name':'Mr. Tony Stark'
+'name':'Mr. Tony Stark'
 })
-  ```
+
+```
 </details>
