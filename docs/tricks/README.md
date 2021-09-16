@@ -1,8 +1,10 @@
-Hey, here the best usage with CRUDIGNITER.
-
 ## Auto HTML Table
+<details>
+  <summary>Sample Code</summary>
+  
 Here the code you can generate html table with `GET`, its will show the all records automatically as your requirent. Here we are using `DataTables.net`.
 Change `http://example.com/users` which your API. and also pass the columns name below of it.
+  
 ```html
 <!DOCTYPE html>
   <html>
@@ -57,3 +59,78 @@ $(document).ready(function() {
 <script src="https://cdn.datatables.net/1.11.1/js/dataTables.bootstrap5.min.js"></script>
 </html>
 ```
+</details>
+
+## CRUD with Python
+<details>
+  <summary>Post Data</summary>
+For Json Body  
+  
+```python
+import requests as api
+
+api_url = 'http://example.com/users'
+response = api.post(url=api_url, json={
+    'name':'Tony Stark',
+    'email':'tony@ironman.com'
+})
+  ```
+  
+  For Form 
+  
+```python
+import requests as api
+
+api_url = 'http://example.com/users?form=true'
+response = api.post(url=api_url, data={
+    'name':'Tony Stark',
+    'email':'tony@ironman.com'
+})
+  ```
+</details>
+
+<details>
+  <summary>Read Data</summary>
+  
+  Read all methos will apply on `params`
+  
+```python
+import requests as api
+
+#for all data
+api_url = 'http://example.com/users'
+response = api.get(url=api_url)
+
+#for where name=rohit
+api_url = 'http://example.com/users'
+response = api.get(url=api_url, params={'name':'Rohit'})
+
+print(response.json())
+  ```
+</details>
+
+<details>
+  <summary>Update Data</summary>
+  
+```python
+import requests as api
+
+api_url = 'http://example.com/users?name=Tony Stark'
+response = api.put(url=api_url, json={
+    'name':'Mr. Tony Stark'
+})
+  ```
+</details>
+
+<details>
+  <summary>Delete Data</summary>
+  
+```python
+import requests as api
+
+api_url = 'http://example.com/users'
+response = api.delete(url=api_url, json={
+    'name':'Mr. Tony Stark'
+})
+  ```
+</details>
