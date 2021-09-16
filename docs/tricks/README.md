@@ -4,7 +4,8 @@
   
 Here the code you can generate html table with `GET`, its will show the all records automatically as your requirent. Here we are using `DataTables.net`.
 Change `http://example.com/users` which your API. and also pass the columns name below of it.
-  
+ 
+
 ```html
 <!DOCTYPE html>
   <html>
