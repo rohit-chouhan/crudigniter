@@ -77,6 +77,10 @@ class Read extends BaseController
             if ($key == 'single') {
               continue;
             }
+            
+            if ($key == '_') {
+              continue;
+            }
 
             $data = $data->where($key, $value); //getting by one like ?name=Rohit
           }
