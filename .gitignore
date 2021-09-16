@@ -1,6 +1,8 @@
 #-------------------------
 # Operating Specific Junk Files
 #-------------------------
+.log
+/docs
 
 # OS X
 .DS_Store
