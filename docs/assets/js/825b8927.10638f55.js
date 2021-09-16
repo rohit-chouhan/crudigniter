@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[746],{2105:function(t){t.exports=JSON.parse('{"allTagsPath":"https://rohit-chouhan.github.io/crudigniter/blog/tags","slug":"https://rohit-chouhan.github.io/crudigniter/blog/tags/hello","name":"hello","count":2,"permalink":"https://rohit-chouhan.github.io/crudigniter/blog/tags/hello"}')}}]);
