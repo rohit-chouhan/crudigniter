@@ -65,7 +65,9 @@ $(document).ready(function() {
 ## CRUD with Python
 <details>
   <summary>Post Data</summary>
+  
 For Json Body  
+ 
   
 ```python
 import requests as api
@@ -78,6 +80,7 @@ response = api.post(url=api_url, json={
   ```
   
   For Form 
+  
   
 ```python
 import requests as api
@@ -92,6 +95,7 @@ response = api.post(url=api_url, data={
 
 <details>
   <summary>Read Data</summary>
+ 
   
   Read all methos will apply on `params`
   
@@ -112,6 +116,7 @@ print(response.json())
 
 <details>
   <summary>Update Data</summary>
+
   
 ```python
 import requests as api
@@ -125,6 +130,7 @@ response = api.put(url=api_url, json={
 
 <details>
   <summary>Delete Data</summary>
+ 
   
 ```python
 import requests as api
