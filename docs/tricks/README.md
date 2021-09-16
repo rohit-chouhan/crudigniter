@@ -65,6 +65,12 @@ $(document).ready(function() {
 ## CRUD with Python
 <details>
   <summary>Post Data</summary>
+
+  If `securiy_config=1`, use bearer token always
+
+  ```python
+  api.post(url,json={}, headers = {"Authorization": "Bearer YOUR_KEY"})
+ ```
   
 For Json Body  
  
