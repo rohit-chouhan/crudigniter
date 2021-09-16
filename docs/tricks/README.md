@@ -97,7 +97,7 @@ response = api.post(url=api_url, data={
   <summary>Read Data</summary>
  
   
-  Read all methos will apply on `params`
+  Read all methods will apply on `params`
   
 ```python
 import requests as api
