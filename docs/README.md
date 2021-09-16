@@ -9,6 +9,9 @@ Security added for all methods, in before its just accessing and performing CRUD
 
 <img width="20" src="https://upload.wikimedia.org/wikipedia/commons/9/92/Orange_animated_right_arrow.gif"/>[Here the Security Documentation](https://rohit-chouhan.github.io/crudigniter/#/security/)
 
+# Some Best Usage with Crudigniter
+<img width="20" src="https://upload.wikimedia.org/wikipedia/commons/9/92/Orange_animated_right_arrow.gif"/>[Here the Tricks Documentation](https://rohit-chouhan.github.io/crudigniter/#/tricks/)
+
 # Installation and Use 🔥
 Just copy the whole program its CI4, and add create database and implication from `App/Config/Database.php` or `root/.env`. There are some classes in Controller don't delete it. Just create new class which you want and enjoy coding.
 
