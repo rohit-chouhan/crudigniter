@@ -64,7 +64,7 @@ class Read extends BaseController
         }
         //-- joins
         else if (array_key_exists("columns", $_GET)) {
-          $data =  $this->conn->query("SELECT COLUMN_NAME as name, DATA_TYPE as datatype , COLUMN_TYPE as columntype , CHARACTER_MAXIMUM_LENGTH AS length FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = N'users' AND COLUMN_NAME NOT IN ('USER','CURRENT_CONNECTIONS','TOTAL_CONNECTIONS') AND TABLE_SCHEMA = 'dbapi'")->getResult();
+          $data =  $this->conn->query("SELECT COLUMN_NAME as name, DATA_TYPE as datatype , COLUMN_TYPE as columntype , CHARACTER_MAXIMUM_LENGTH AS length FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = N'".$table."' AND COLUMN_NAME NOT IN ('USER','CURRENT_CONNECTIONS','TOTAL_CONNECTIONS') AND TABLE_SCHEMA = '".$this->conn->database."'")->getResult();
         } else {
           //for all
           $data = $this->conn->table($table);
