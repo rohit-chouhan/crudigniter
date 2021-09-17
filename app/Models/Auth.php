@@ -6,6 +6,7 @@ use CodeIgniter\Model;
 
 class Auth extends Model
 {
+	//check authorization is true or not
     public function AuthCheck(){
         if(getenv('SECURITY_CONFIG') == true){
 			if($this->getToken() == getenv('TOKEN_KEY')) {
@@ -18,6 +19,7 @@ class Auth extends Model
 		}
     }
 
+	//method to read bearer token
     public function getToken(){
         $headers = null;
         if (isset($_SERVER['Authorization'])) {
