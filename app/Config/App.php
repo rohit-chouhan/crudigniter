@@ -23,7 +23,7 @@ class App extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $baseURL = 'http://localhost/ci-dbapi';
+	public $baseURL = 'http://example.com';
 
 	/**
 	 * --------------------------------------------------------------------------
