@@ -35,6 +35,12 @@ $routes->get('/', 'Home::index');
 //create
 $routes->post('/(:any)', 'Create::index/$1' ,['subdomain' => 'api']);
 //read
+$routes->get('/', function(){
+	echo json_encode(array(
+		"status"=>true,
+		"message"=>"Read documentation here https://rohit-chouhan.github.io/crudigniter/"
+	));
+} ,['subdomain' => 'api']);
 $routes->get('/(:any)', 'Read::index/$1' ,['subdomain' => 'api']);
 //update
 $routes->put('/(:any)', 'Update::index/$1' ,['subdomain' => 'api']);
