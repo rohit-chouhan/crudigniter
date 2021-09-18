@@ -33,20 +33,20 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 //create
-$routes->post('/(:any)', 'Create::index/$1' ,['subdomain' => 'api']);
+$routes->post('/(:any)', 'Create::index/$1' ,['subdomain' => getenv('SUB_DOMAIN')]);
 //read
 $routes->get('/', function(){
 	echo json_encode(array(
 		"status"=>true,
 		"message"=>"Read documentation here https://rohit-chouhan.github.io/crudigniter/"
 	));
-} ,['subdomain' => 'api']);
-$routes->get('/(:any)', 'Read::index/$1' ,['subdomain' => 'api']);
+} ,['subdomain' => getenv('SUB_DOMAIN')]);
+$routes->get('/(:any)', 'Read::index/$1' ,['subdomain' =>  getenv('SUB_DOMAIN')]);
 //update
-$routes->put('/(:any)', 'Update::index/$1' ,['subdomain' => 'api']);
-$routes->patch('/(:any)', 'Update::index/$1' ,['subdomain' => 'api']);
+$routes->put('/(:any)', 'Update::index/$1' ,['subdomain' => getenv('SUB_DOMAIN')]);
+$routes->patch('/(:any)', 'Update::index/$1' ,['subdomain' => getenv('SUB_DOMAIN')]);
 //delete
-$routes->delete('/(:any)', 'Delete::index/$1' ,['subdomain' => 'api']);
+$routes->delete('/(:any)', 'Delete::index/$1' ,['subdomain' => getenv('SUB_DOMAIN')]);
 
 /*
  * --------------------------------------------------------------------
