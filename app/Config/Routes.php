@@ -38,7 +38,7 @@ $routes->post('/(:any)', 'Create::index/$1' ,['subdomain' => getenv('SUB_DOMAIN'
 $routes->get('/', function(){
 	echo json_encode(array(
 		"status"=>true,
-		"message"=>"Read documentation here https://rohit-chouhan.github.io/crudigniter/"
+		"message"=>"Read documentation here https://crudigniter.github.io"
 	));
 } ,['subdomain' => getenv('SUB_DOMAIN')]);
 $routes->get('/(:any)', 'Read::index/$1' ,['subdomain' =>  getenv('SUB_DOMAIN')]);
