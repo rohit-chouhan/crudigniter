@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkcrudigniter=self.webpackChunkcrudigniter||[]).push([[135],{1920:function(e){e.exports=JSON.parse('{"allTagsPath":"/crudigniter/blog/tags","slug":"/crudigniter/blog/tags/facebook","name":"facebook","count":1,"permalink":"/crudigniter/blog/tags/facebook"}')}}]);
