@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmy_website=self.webpackChunkmy_website||[]).push([[915],{5077:function(s){s.exports=JSON.parse('{"allTagsPath":"/crudigniter/blog/tags","slug":"/crudigniter/blog/tags/docusaurus","name":"docusaurus","count":4,"permalink":"/crudigniter/blog/tags/docusaurus"}')}}]);
