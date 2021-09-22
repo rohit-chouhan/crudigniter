@@ -22,7 +22,11 @@ class CheckImage extends Model
 		$src_file_name = $image;
 		$ext = strtolower(pathinfo($src_file_name, PATHINFO_EXTENSION)); 
 		if (in_array($ext, $supported_image)) {
-			return "http://media.".str_replace(['http://','https://'],"",base_url())."/".$image;
+			if(getenv('SUB_DOMAIN_ENABLE') == true){
+				return "http://media.".str_replace(['http://','https://'],"",base_url())."/".$image;
+			} else {
+				return "".base_url()."/uploads/".$image;
+			}
 		} else {
 			return $image;
 		}
