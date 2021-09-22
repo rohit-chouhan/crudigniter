@@ -48,6 +48,11 @@ $routes->patch('/(:any)', 'Update::index/$1' ,['subdomain' => getenv('SUB_DOMAIN
 //delete
 $routes->delete('/(:any)', 'Delete::index/$1' ,['subdomain' => getenv('SUB_DOMAIN')]);
 
+
+$routes->get('/(:any)', function($image_name){
+	$remoteImage=base_url()."/uploads/".$image_name."";
+	return redirect()->to($remoteImage); 
+},['subdomain' => 'media']);
 /*
  * --------------------------------------------------------------------
  * Additional Routing
