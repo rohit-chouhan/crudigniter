@@ -21,7 +21,7 @@ CI_ENVIRONMENT = production
 #--------------------------------------------------------------------
 # QUERY CONFIGRATION
 #--------------------------------------------------------------------
-SUB_DOMAIN_ENABLE = 0
+SUB_DOMAIN_ENABLE = 1
 SUB_DOMAIN = 'api'
 
 SECURITY_CONFIG = 0
