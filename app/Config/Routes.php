@@ -32,27 +32,36 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-//create
-$routes->post('/(:any)', 'Create::index/$1' ,['subdomain' => getenv('SUB_DOMAIN')]);
-//read
-$routes->get('/', function(){
-	echo json_encode(array(
-		"status"=>true,
-		"message"=>"Read documentation here https://crudigniter.github.io"
-	));
-} ,['subdomain' => getenv('SUB_DOMAIN')]);
-$routes->get('/(:any)', 'Read::index/$1' ,['subdomain' =>  getenv('SUB_DOMAIN')]);
-//update
-$routes->put('/(:any)', 'Update::index/$1' ,['subdomain' => getenv('SUB_DOMAIN')]);
-$routes->patch('/(:any)', 'Update::index/$1' ,['subdomain' => getenv('SUB_DOMAIN')]);
-//delete
-$routes->delete('/(:any)', 'Delete::index/$1' ,['subdomain' => getenv('SUB_DOMAIN')]);
 
-
-$routes->get('/(:any)', function($image_name){
-	$remoteImage=base_url()."/uploads/".$image_name."";
-	return redirect()->to($remoteImage); 
-},['subdomain' => 'media']);
+if(getenv('SUB_DOMAIN_ENABLE') == true){
+	$routes->post('/(:any)', 'Create::index/$1' ,['subdomain' => getenv('SUB_DOMAIN')]);
+	$routes->get('/', function(){
+		echo json_encode(array(
+			"status"=>true,
+			"message"=>"Read documentation here https://crudigniter.github.io"
+		));
+	} ,['subdomain' => getenv('SUB_DOMAIN')]);
+	$routes->get('/(:any)', 'Read::index/$1' ,['subdomain' =>  getenv('SUB_DOMAIN')]);
+	$routes->put('/(:any)', 'Update::index/$1' ,['subdomain' => getenv('SUB_DOMAIN')]);
+	$routes->patch('/(:any)', 'Update::index/$1' ,['subdomain' => getenv('SUB_DOMAIN')]);
+	$routes->delete('/(:any)', 'Delete::index/$1' ,['subdomain' => getenv('SUB_DOMAIN')]);
+	$routes->get('/(:any)', function($image_name){
+		$remoteImage=base_url()."/uploads/".$image_name."";
+		return redirect()->to($remoteImage); 
+	},['subdomain' => 'media']);
+} else {
+	$routes->post('/(:any)', 'Create::index/$1');
+	$routes->get('/', function(){
+		echo json_encode(array(
+			"status"=>true,
+			"message"=>"Read documentation here https://crudigniter.github.io"
+		));
+	});
+	$routes->get('/(:any)', 'Read::index/$1');
+	$routes->put('/(:any)', 'Update::index/$1');
+	$routes->patch('/(:any)', 'Update::index/$1');
+	$routes->delete('/(:any)', 'Delete::index/$1');
+}
 /*
  * --------------------------------------------------------------------
  * Additional Routing
