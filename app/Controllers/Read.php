@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use Exception;
+
 class Read extends BaseController
 {
   public $conn;
@@ -13,6 +15,7 @@ class Read extends BaseController
     helper(['text']);
     $this->conn = \Config\Database::connect();
     $this->auth = new \App\Models\Auth();
+    $this->checkImage = new \App\Models\CheckImage();
     $this->request = \Config\Services::request();
   }
 
@@ -77,6 +80,10 @@ class Read extends BaseController
             if ($key == 'single') {
               continue;
             }
+
+            if ($key == '_embed') {
+              continue;
+            }
             
             if ($key == '_') {
               continue;
@@ -85,7 +92,9 @@ class Read extends BaseController
             $data = $data->where($key, $value); //getting by one like ?name=Rohit
           }
 
+       
           $data = $data->get()->getResult();
+        
         }
       }
 
@@ -100,6 +109,17 @@ class Read extends BaseController
           }
         }
       }
+
+      //-------- image converting to url auto
+      if (array_key_exists("_embed", $_GET)) {
+      for($im=0;$im<count($data);$im++){
+        foreach($data[$im] as $key=>$value)
+          {
+            $data[$im]->$key = $this->checkImage->checkImage($data[$im]->$key);
+          }
+      }
+    }
+      //---------------------
 
       if (array_key_exists("single", $_GET)) {
         echo json_encode($data[0]);
