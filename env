@@ -21,7 +21,9 @@ CI_ENVIRONMENT = production
 #--------------------------------------------------------------------
 # QUERY CONFIGRATION
 #--------------------------------------------------------------------
+SUB_DOMAIN_ENABLE = 0
 SUB_DOMAIN = 'api'
+
 SECURITY_CONFIG = 0
 TOKEN_KEY = '1234'
 
@@ -50,10 +52,10 @@ TOKEN_KEY = '1234'
 # DATABASE
 #--------------------------------------------------------------------
 
- database.default.hostname = your_server_hostname
- database.default.database = your_database_name
- database.default.username = your_database_or_server_username
- database.default.password = your_database_or_server_password
+ database.default.hostname = localhost
+ database.default.database = job
+ database.default.username = root
+ database.default.password = 
  database.default.DBDriver = MySQLi
 # database.default.DBPrefix =
 
