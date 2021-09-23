@@ -11,7 +11,7 @@ CI_ENVIRONMENT = production
 
 #--------------------------------------------------------------------
 # Your Website Domain Nain
-app.baseURL = 'http://exambaba.com'
+app.baseURL = 'http://example.com'
 #--------------------------------------------------------------------
 
 
