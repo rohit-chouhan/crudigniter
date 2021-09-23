@@ -4,6 +4,7 @@ namespace Config;
 
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
+$subdomain = getenv('SUB_DOMAIN');
 
 // Load the system's routing file first, so that the app and ENVIRONMENT
 // can override as needed.
@@ -34,17 +35,17 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 
 if(getenv('SUB_DOMAIN_ENABLE') == true){
-	$routes->post('/(:any)', 'Create::index/$1' ,['subdomain' => getenv('SUB_DOMAIN')]);
+	$routes->post('/(:any)', 'Create::index/$1' ,['subdomain' => $subdomain]);
 	$routes->get('/', function(){
 		echo json_encode(array(
 			"status"=>true,
 			"message"=>"Read documentation here https://crudigniter.github.io"
 		));
-	} ,['subdomain' => getenv('SUB_DOMAIN')]);
-	$routes->get('/(:any)', 'Read::index/$1' ,['subdomain' =>  getenv('SUB_DOMAIN')]);
-	$routes->put('/(:any)', 'Update::index/$1' ,['subdomain' => getenv('SUB_DOMAIN')]);
-	$routes->patch('/(:any)', 'Update::index/$1' ,['subdomain' => getenv('SUB_DOMAIN')]);
-	$routes->delete('/(:any)', 'Delete::index/$1' ,['subdomain' => getenv('SUB_DOMAIN')]);
+	} ,['subdomain' => $subdomain]);
+	$routes->get('/(:any)', 'Read::index/$1' ,['subdomain' =>  $subdomain]);
+	$routes->put('/(:any)', 'Update::index/$1' ,['subdomain' => $subdomain]);
+	$routes->patch('/(:any)', 'Update::index/$1' ,['subdomain' => $subdomain]);
+	$routes->delete('/(:any)', 'Delete::index/$1' ,['subdomain' => $subdomain]);
 	$routes->get('/(:any)', function($image_name){
 		$remoteImage=base_url()."/uploads/".$image_name."";
 		return redirect()->to($remoteImage); 
