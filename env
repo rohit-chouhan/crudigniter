@@ -1,140 +1,47 @@
-#--------------------------------------------------------------------
-# Example Environment Configuration file
-#
-# This file can be used as a starting point for your own
-# custom .env files, and contains most of the possible settings
-# available in a default install.
-#
-# By default, all of the settings are commented out. If you want
-# to override the setting, you must un-comment it by removing the '#'
-# at the beginning of the line.
-#--------------------------------------------------------------------
-
-#--------------------------------------------------------------------
-# ENVIRONMENT
-#--------------------------------------------------------------------
+# Do not delete this file, this file name always be (.env)
 
 CI_ENVIRONMENT = production
 #CI_ENVIRONMENT = development
 
+# run it always in producation mode when its ready to deploy
 
 #--------------------------------------------------------------------
-# QUERY CONFIGRATION
+# CRDUIGNITER CONFIGRATION
 #--------------------------------------------------------------------
-SUB_DOMAIN_ENABLE = 1
+
+#--------------------------------------------------------------------
+# Your Website Domain Nain
+app.baseURL = 'http://exambaba.com'
+#--------------------------------------------------------------------
+
+
+#--------------------------------------------------------------------
+# Subdomain Configuration
+SUB_DOMAIN_ENABLE = 0 
 SUB_DOMAIN = 'api'
 
+# If SUB_DOMAIN_ENABLE=0, so your domain will example.com
+# If SUB_DOMAIN_ENABLE=1, so your domain will api.example.com
+#--------------------------------------------------------------------
+
+#--------------------------------------------------------------------
+# Security Configuration (Header Autorization)
 SECURITY_CONFIG = 0
 TOKEN_KEY = '1234'
 
+
 # if SECURITY_CONFIG is 1 thats mean its true, you have to auth TOKEN_KEY as Bearer token everytime
 # if SECURITY_CONFIG is 0 thats mean its false, it will work normally, so just ignore it.
-
-
 #--------------------------------------------------------------------
-# APP
-#--------------------------------------------------------------------
-
-# app.baseURL = ''
-# app.forceGlobalSecureRequests = false
-
-# app.sessionDriver = 'CodeIgniter\Session\Handlers\FileHandler'
-# app.sessionCookieName = 'ci_session'
-# app.sessionExpiration = 7200
-# app.sessionSavePath = NULL
-# app.sessionMatchIP = false
-# app.sessionTimeToUpdate = 300
-# app.sessionRegenerateDestroy = false
-
-# app.CSPEnabled = false
 
 #--------------------------------------------------------------------
 # DATABASE
 #--------------------------------------------------------------------
 
- database.default.hostname = localhost
- database.default.database = job
- database.default.username = root
- database.default.password = 
+ database.default.hostname = your_hostname
+ database.default.database = your_database_name
+ database.default.username = your_host/db_username
+ database.default.password = your_host/db_password
  database.default.DBDriver = MySQLi
-# database.default.DBPrefix =
 
-# database.tests.hostname = localhost
-# database.tests.database = ci4
-# database.tests.username = root
-# database.tests.password = root
-# database.tests.DBDriver = MySQLi
-# database.tests.DBPrefix =
 
-#--------------------------------------------------------------------
-# CONTENT SECURITY POLICY
-#--------------------------------------------------------------------
-
-# contentsecuritypolicy.reportOnly = false
-# contentsecuritypolicy.defaultSrc = 'none'
-# contentsecuritypolicy.scriptSrc = 'self'
-# contentsecuritypolicy.styleSrc = 'self'
-# contentsecuritypolicy.imageSrc = 'self'
-# contentsecuritypolicy.base_uri = null
-# contentsecuritypolicy.childSrc = null
-# contentsecuritypolicy.connectSrc = 'self'
-# contentsecuritypolicy.fontSrc = null
-# contentsecuritypolicy.formAction = null
-# contentsecuritypolicy.frameAncestors = null
-# contentsecuritypolicy.frameSrc = null
-# contentsecuritypolicy.mediaSrc = null
-# contentsecuritypolicy.objectSrc = null
-# contentsecuritypolicy.pluginTypes = null
-# contentsecuritypolicy.reportURI = null
-# contentsecuritypolicy.sandbox = false
-# contentsecuritypolicy.upgradeInsecureRequests = false
-
-#--------------------------------------------------------------------
-# COOKIE
-#--------------------------------------------------------------------
-
-# cookie.prefix = ''
-# cookie.expires = 0
-# cookie.path = '/'
-# cookie.domain = ''
-# cookie.secure = false
-# cookie.httponly = false
-# cookie.samesite = 'Lax'
-# cookie.raw = false
-
-#--------------------------------------------------------------------
-# ENCRYPTION
-#--------------------------------------------------------------------
-
-# encryption.key =
-# encryption.driver = OpenSSL
-# encryption.blockSize = 16
-# encryption.digest = SHA512
-
-#--------------------------------------------------------------------
-# HONEYPOT
-#--------------------------------------------------------------------
-
-# honeypot.hidden = 'true'
-# honeypot.label = 'Fill This Field'
-# honeypot.name = 'honeypot'
-# honeypot.template = '<label>{label}</label><input type="text" name="{name}" value=""/>'
-# honeypot.container = '<div style="display:none">{template}</div>'
-
-#--------------------------------------------------------------------
-# SECURITY
-#--------------------------------------------------------------------
-
-# security.tokenName = 'csrf_token_name'
-# security.headerName = 'X-CSRF-TOKEN'
-# security.cookieName = 'csrf_cookie_name'
-# security.expires = 7200
-# security.regenerate = true
-# security.redirect = true
-# security.samesite = 'Lax'
-
-#--------------------------------------------------------------------
-# LOGGER
-#--------------------------------------------------------------------
-
-# logger.threshold = 4
