@@ -17,7 +17,7 @@ app.baseURL = 'http://example.com'
 
 #--------------------------------------------------------------------
 # Subdomain Configuration
-SUB_DOMAIN_ENABLE = 0 
+SUB_DOMAIN_ENABLE = 1
 SUB_DOMAIN = 'api'
 
 # If SUB_DOMAIN_ENABLE=0, so your domain will example.com
