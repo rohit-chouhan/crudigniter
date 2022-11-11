@@ -122,15 +122,19 @@ class Read extends BaseController
       //---------------------
 
       if (array_key_exists("single", $_GET)) {
-        echo json_encode($data[0]);
+        // echo json_encode($data[0]);
+        return $this->response->setJSON($data[0]);
       } else {
-        echo json_encode($data);
+        // echo json_encode($data);
+         return $this->response->setJSON($data);
       }
     } else {
-      echo json_encode(array("status" => false, "message" => "Table not found"));
+      // echo json_encode(array("status" => false, "message" => "Table not found"));
+      return $this->response->setJSON(array("status" => false, "message" => "Table not found"));
     }
     } else {
-      echo json_encode(array("status" => false, "message" => "Failed to auth, token is invalid"));
+      // echo json_encode(array("status" => false, "message" => "Failed to auth, token is invalid"));
+      return $this->response->setJSON(array("status" => false, "message" => "Failed to auth, token is invalid"));
     }
   }
 }
